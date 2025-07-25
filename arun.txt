@@ -1,20 +1,15 @@
-commands: to flow--------------------
+~~~~~~~~~~~~~~~~~~~~~~~`commands: How the flow in the github~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Fork the Repo
 Go to the repo you want to fork, e.g.
 👉 https://github.com/devops-by-examples/Shell
 
-Click the Fork button on the top right.
-
 GitHub will create a copy under your account like:
 https://github.com/arunchincholi/Shell
 
-  git clone https://github.com/arunchincholi/Shell.git
+git clone https://github.com/arunchincholi/Shell.git
 cd Shell
-
 git remote -v
-
 git checkout -b feature-mycode
-
 echo "This is my test script" > test.sh
 git add test.sh
 git commit -m "Add test.sh with basic script content"
@@ -29,20 +24,25 @@ You’ll see a “Compare & pull request” button. Click it.
 Add:
 
 Title: Added test.sh file
-
 Description: what this change does
-
 Click “Create pull request”
---------------------------------------------
-how to authetiacte with https and shh.
+==================================================================================================================
+~~~~~~~~~~~~~~~~~~how to authetiacte with https and shh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+https:#######################################
 git clone https://github.com/username/repo.git
 username and persoanl access token 
 
-Go to GitHub → Settings
-Click "Developer settings" > "Personal Access Tokens"
-Click "Generate new token (classic)"
-Select scopes (e.g., repo, workflow, etc.)
-Click Generate token
-Copy the token and use it as password.
+Settings
+Developer Settings
+Personal access tokens (classic)
+---store temproraly:
+git config --global credential.helper store
 
+ssh:################################################
+craete ssh-kegen >it will create public key 
+paste in the github
+Go to GitHub → Settings → SSH and GPG keys
+Click "New SSH key", paste the key and save.
 
+============================================================================================================================

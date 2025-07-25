@@ -1,4 +1,4 @@
-commands:
+commands: to flow--------------------
 1. Fork the Repo
 Go to the repo you want to fork, e.g.
 👉 https://github.com/devops-by-examples/Shell
@@ -33,3 +33,16 @@ Title: Added test.sh file
 Description: what this change does
 
 Click “Create pull request”
+--------------------------------------------
+how to authetiacte with https and shh.
+git clone https://github.com/username/repo.git
+username and persoanl access token 
+
+Go to GitHub → Settings
+Click "Developer settings" > "Personal Access Tokens"
+Click "Generate new token (classic)"
+Select scopes (e.g., repo, workflow, etc.)
+Click Generate token
+Copy the token and use it as password.
+
+

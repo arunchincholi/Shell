@@ -46,3 +46,6 @@ Go to GitHub → Settings → SSH and GPG keys
 Click "New SSH key", paste the key and save.
 
 ============================================================================================================================
+
+git featch and git pull 
+

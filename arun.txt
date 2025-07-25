@@ -1,4 +1,4 @@
-commands:
+acommands:
 1. Fork the Repo
 Go to the repo you want to fork, e.g.
 👉 https://github.com/devops-by-examples/Shell

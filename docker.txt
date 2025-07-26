@@ -1,4 +1,3 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~docker flowrun 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~contaier exoit immediatly after run docker ontainer:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 what were runninh the process inside CMD or ENTRYPOINT that is short life process ex: echo "hello" once its complte docker will exit 
 - if the configuration changes : extermalizer container going dowm - dq1ini passwd expired? so we changed the password so its came up.
@@ -73,6 +72,62 @@ usually in the organization no one will use the dockerhub public registry even t
 enterprise level use: ECR, ACR and quay.io (redhat maintaineg the container registry ) or ghcr.io (git hub container registry ) in my project we are using teh ghcr.io using .
 
 -docker hub create private and docker log>tag the image>docker push to docker hub.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~explain diff between the CMD and ENTRYPOINT~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+CMD and ENTRYPOINT is instrucation or keyword
+- you can use multiple CMD but dpcker will run last CMD, CMD can override in the docker run command menas in runtime , dockerfile constit atlease one CMD in teh dockerfile.
+- ENTRYPOINT not override 
+ex: CMD/ENTRUPOINT ["echo", "hello"]
+dcker build and dicker run image   - o/p is hello in both CMD and ENTRYPOINT
+
+1. docker run image_cmd echo "my name is cmd i can override"
+o/p : my name is cmd i can override            note: but in the dockerfile inside CMD hello is there .
+1. d0cker run image_ep  world    - i pass the arguments 
+o/p : is the "hello world"   its not override insted of that appended with what is there inside entrypoint []
+
+
+docker run image_ep world/
+- i will get the error OCI runtime failed becuase i passed the argumnets that will not overrides exsting one inside what its there in ENTRYPOINT
+where as CMD hello (it will remove like heloo and add hello world)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~what docker commnds you are using teh daily~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+docker ps , docker ps -a, docker cotainer prune, docker image prune, docker volume/network prune, docker system df , docker save -0 image.tar <full imagename> and docker losd -i .tar fiel the destinartion.
+docker stop <containername/id> , docker start . docker rm -f, docker images, dcoker build -t imagename location , docker run --no-cache --name <cotainer_name> -itd -p <hostport:containerport> image , docker inspect <conatiner_is> | grep <docker image id>, docker stats ,docker attch container imagename, docker logs <containerid>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~when you will remove container forcefully~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~````
+docker ps -a
+docker rm <conatiner >, docker rm -f <conatiner name/id>
+SIGKILL - forcefully kill running container kill , gracefully SIGTERM singnal stop and remove container.
+when?
+when container is stuck or unresponsive , when conatiner is restarting te container, when we are running ci/cd pipeline once build done i wan to rmeove the comtainer.
+
+~~~~~~~~~~~~~~~`issue~~~~~~~~~~~~~~~~~````
+
+container port laredy existes:
+container name already in use : container name is unique 
+js heap out of memory and nos space left on device .
+horixentalwe increse soem more container (8085:8080 and 8090:8080 like that and added the 8085 and 8090 in the under 8080 listmer so trafiic will go from 8080 to both host port.
+- craeted 2 more instances add teh setiup >build the image and run the cntainer and postman we will check with that alb:8080 , ip:host port.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+so :
+CMD- default argumnets wgat we passed that override 
 
 
 

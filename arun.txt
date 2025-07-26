@@ -61,5 +61,9 @@ Linear ommit history done by - rebase (i am in featchure brach 20 commit >git re
 cronological commit added  : yypu will see all commit based on tha date (history what they are created)
 where? - git log (here based on time -merge  descinding.) 
 
+git merge: combined twoo branches and create new merge commmit. - based on timestamp full history- crnological order.- not serial 
+git rebase : linier commit histry, move the branch commits on top of another branch .
+
+
 
 

@@ -55,7 +55,10 @@ Search pattern  :
 grep "string" filename , grep -rL filename , zgrep for .gz files, egrep or grep -iEc "string1|string2" <filename>
 
 ssh-keygen -t rsa >id_rsa.pub id_rsa , vi autprization add pub key, ssh-copygen app_user@172.27.72.16
-
+tar -cvzf arun.tar .
+tar -xzf arun.tar
+flush, delete , create zip file, var/lib/docker/container, truncate -s 0 sss.log
+tail -c 2G arun.log (take 2gb lofs from file)
 
 ~~~~~~~~~~~~~~~~```can you restore lost pem chain:how ypu can acess the instance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
 
@@ -69,6 +72,9 @@ how?
 aws:i will connect ec2 instamce by  session manger and ec2 instance connect  (connect- ec2 instamce instance connect mostly enabled - cloud terminal -
 using ssh-keygen generate public and private key (place the public key in the authorize key and download private key permision 400 so use this private key connect cloud instance.
 
+~~~~~~~~~~~~~~~~/var filled 100%~~~~~~~~~~~~~~~~~~~~~~~~````
+all sevrice write logs inside var log
+- nginx, tomcat, httpd
 
 
 

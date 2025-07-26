@@ -1,2 +1,16 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~docker flow~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~docker flowrun 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~contaier exoit immediatly after run docker ontainer:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+what were runninh the process inside CMD or ENTRYPOINT that is short life process ex: echo "hello" once its complte docker will exit 
+- if the configuration changes : extermalizer container going dowm - dq1ini passwd expired? so we changed the password so its came up.
+- check docker logs 
+CMD ["nginx -g deamon off;"]
+
+sometimes docker container will go dwn for "js heap out memory so we need to delet "echo -3 /proc/mem page demt, inode dents and both> inial and maxixmun heao size/
+
+~~~~~~~~~~~~~~~~~~~~~~``
+expose instruction/keyword
+for socumention >evryoe get to know the from which port application listning.
+like metadata.
+expose taken by -p (keyword mapping hostport:containerport)
+
   

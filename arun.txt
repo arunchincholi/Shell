@@ -48,4 +48,18 @@ Click "New SSH key", paste the key and save.
 ============================================================================================================================
 
 git featch and git pull 
+git branch -a
+remote + lpocal
+-r only remote 
+git merger <url_rmeote>
+git merge remotes/origin/arunfetatchre
+git featch origin <name of branch>
+----------------------------
+git cherry pick - take only some changes and merger intlinere commit hosory - done by rebase (o your repository .
+git merge and git rebase :
+Linear ommit history done by - rebase (i am in featchure brach 20 commit >git rebase origin main so first main 50 commit and then 20 commit of that feture branch)
+cronological commit added  : yypu will see all commit based on tha date (history what they are created)
+where? - git log (here based on time -merge  descinding.) 
+
+
 

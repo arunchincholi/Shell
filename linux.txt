@@ -54,8 +54,23 @@ ps -ef ppid,--sort=%cpu, %mem
 Search pattern  :
 grep "string" filename , grep -rL filename , zgrep for .gz files, egrep or grep -iEc "string1|string2" <filename>
 
+ssh-keygen -t rsa >id_rsa.pub id_rsa , vi autprization add pub key, ssh-copygen app_user@172.27.72.16
+
 
 ~~~~~~~~~~~~~~~~```can you restore lost pem chain:how ypu can acess the instance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+
+during craetion instamce-.pem file(private key for connect ec2 instane)
+ppk ok for putty.mobaxterm client connection so convert pem to ppk -load private key>give name>download and add that key in the paygen so no need to give every time of login.
+- i dleted pem file accidently ?
+can i restore?
+throuhpassword or private key:
+ ssh -i <pem file place> username@password  where as passwordauthentication disabled so it will ask the pem file.
+how?
+aws:i will connect ec2 instamce by  session manger and ec2 instance connect  (connect- ec2 instamce instance connect mostly enabled - cloud terminal -
+using ssh-keygen generate public and private key (place the public key in the authorize key and download private key permision 400 so use this private key connect cloud instance.
+
+
+
 
 
 

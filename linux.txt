@@ -1,1 +1,70 @@
-hi
+
+
+~~~~~~~~~~~~what are the commands you ae using the daily basis in the linux~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+Disk Space Troubleshooting:
+df -h
+du -sh *, ls , ls -h , ls --help , ls -lrt,cd 
+
+find / -type -f/d <filename/pattern>
+locate arun.txt
+  - yum instll mloacte and updatedb.
+
+
+
+ Process and Performance Monitoring:
+ps -aux | grep java
+ps -aux | grep java
+kill -9 <process>, -3 thred dump
+load avarage :
+top -H
+sar -u 1 5 (every 1 second 5 times) u-cpu, r-mem, d-input and output 
+free -h, df -h, vmstat
+uptime -load avarger 1min, 5min,15 min
+who - who are loggin, w- who are loggin and what they are doinng. wall message, watch ls, top -H (ctr+u, +r +k +n)
+
+Viewing and Editing Files:
+cat <file name>, less <file name>- you can serch string also by /or ? (n anf N forward and backward), more give spacebar button page by page where as less you can serch string it will open the entire thing so give q for exit.
+tail -300f <log.txt>, head -300f, 
+head -m 5 , tail -n 5, rm -rf *, rm <file name>
+
+Permissions and User Management:
+chmod -R 777 <filename>    4+2+1  (ugoa-user,group,other,all)  u=rwx, a-x.
+chown app_user.app_user hybrid_runner.tar
+usermod -aG docker app_user and newgrp docker or logout and log in 
+shell script file should be executable : chmod +x <*.sh>
+useradd <username>, userdel <username>, by defauly /bin/bash , useradd -s /usr.sbin/nologin so no inteactive terminal , passwd app_user,chage -l ,chage -M -1 app_user(password no expires), chage -l E "yyyy-mm-dd" app_user for expir.
+
+
+alias and crontab:
+vi ~/.bashrc and ls='ls -lrt', source ~/.bashrc
+if you open the terminal what were there in bashrc those are will excuted.
+
+
+crontab -l and crontab -e (add * * * * * <abosulate path/startserver.sh> or @reboot 230 <absoluatepath>, min/hour/dayofmonth,month,datofweek
+
+file transfer:
+scp -r <filename> app_user@<ip>:<destinationpath>
+if more size use rsynch insted of scp.
+for local use cp <source destination> and mv <old> <new> for rename 
+
+we are using teh some some systemctl process:
+systemctl status/start/stop <service_name>
+ps -ef ppid,--sort=%cpu, %mem
+
+Search pattern  :
+grep "string" filename , grep -rL filename , zgrep for .gz files, egrep or grep -iEc "string1|string2" <filename>
+
+
+~~~~~~~~~~~~~~~~```can you restore lost pem chain:how ypu can acess the instance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+
+
+
+
+
+
+
+
+
+
+
+

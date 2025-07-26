@@ -103,11 +103,13 @@ when container is stuck or unresponsive , when conatiner is restarting te contai
 
 ~~~~~~~~~~~~~~~`issue~~~~~~~~~~~~~~~~~````
 
-container port laredy existes:
-container name already in use : container name is unique 
-js heap out of memory and nos space left on device .
-horixentalwe increse soem more container (8085:8080 and 8090:8080 like that and added the 8085 and 8090 in the under 8080 listmer so trafiic will go from 8080 to both host port.
+- container port laredy existes:
+- container name already in use : container name is unique 
+- js heap out of memory and nos space left on device .
+- horixentalwe increse soem more container (8085:8080 and 8090:8080 like that and added the 8085 and 8090 in the under 8080 listmer so trafiic will go from 8080 to both host port.
 - craeted 2 more instances add teh setiup >build the image and run the cntainer and postman we will check with that alb:8080 , ip:host port.
+
+
 
 
 

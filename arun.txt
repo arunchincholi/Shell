@@ -71,6 +71,21 @@ main  (active developemt)
 fetfeture (feture branch - release)
 release- tag - release (create tag and create release)
 hotfix - push to main branch and notify developer to working on fetaure branch.
+---------------------------------------------------------------------------------
+challanges you faced in ypur previous organaiztion:
+3 challnages:
+1. git branching strategy
+2. aceess controal
+3, .git . .gitigonre , webhook
+
+Hook	       Trigger Point            	      Key Usage
+pre-commit	 Before git commit              	Code validation,  linting, secret protection
+post-commit	After git commit	Logging,         notification, tagging
+---------------------------------------------------------------------------
+talk abou challanges pu faced in recent days:
+acess- controal (safe to play)
+craete branch - 200 branches -stale brancg
+git branching strategry 
 
 
 

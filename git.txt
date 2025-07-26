@@ -87,6 +87,23 @@ acess- controal (safe to play)
 craete branch - 200 branches -stale brancg
 git branching strategry 
 
+how:
+
+iam using the free ccount so manage acees not hsowing:
+Go to your GitHub repository.
+Click on the "Settings" tab (top right).
+On the left sidebar, click "Branches".
+Under "Branch protection rules", click "Add rule".
+In Branch name pattern, enter main or release/* or any branch.
+Enable:
+✅ Require a pull request before merging
+✅ Require approvals (1+)
+✅ Restrict who can push to matching branches
+
+-----------------------------------------------------------------
+how yoy do handle merge conflict :
+
+
 
 
 

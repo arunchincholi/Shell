@@ -36,4 +36,58 @@ stop and restrt dat inside docker will lost  so crete volume and attch that volu
 
 --mount local:docker path
 
+~~~~~~~~~~~~~~~~~~~~`ypu made you change , rebuild the image but chnages not reflecting~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+docker build --no-cache -t <tag> .
+dockerfile path, -f dockerfilepath.
+layer caching -on top of layer it will build 
+- this occures very -very rear.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~application crashes with permisstion denaied in the container~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+in dockerfile 
+USER root 
+by defukt it will run teh root only dockerfile 
+
+localhost:its working 
+using teh ome iuser that full l permisstion.
+devops enginerr use the CMD app.py file so app.py file have app_user:app_user permisstion so in dockerfile USER devops_user so that due to permisstion issue its comming thepermisstion denaied
+- so add the your user into the docker group as wll "usermod -aG docker app_user" the "newgrp docker" or log out and log inback. or use the chmod +x app.py (so the all user have the access )
+- this is mainly focus on which user using teh dockerfile and CMD file have which owner and which group and what about the permisstion.
+so :::: just give executable permisstion or simpley add user into docker group.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~dicker host running out of disk space~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+no space left on device
+- check docker system df and docker system prune -a (all stpped ctainer,all build cache images which is no container is using that image(dangling image- none tag images overight image so its none tag), volume that no container is using that volume, and network)
+ - cd /var/lib/dockr.conatiner >docker truncate -s 0 <container.json> to flush out
+- remove the dangling images an stopped container, no use te vlumes and network
+- docker container/volume/network prune. docker image prune (for dangling images)
+- check again by "docker system df "
+- write log rotation script 
+
+~~~~~~~~~~~~~how you debug the live container~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker exec -it <conatiner> /bin/bash 
+use only "sh" also if /bin/bash intrpreter not there menas 
+exec -it is moved inside container (docker run -it command craete container and open with intercative mode if container live mens use the docker exec -it )
+
+~~~~~~~~~~~~~~~~~~~~~~~~~`WHICH container regisrty used in your organization~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+usually in the organization no one will use the dockerhub public registry even teh private registry also no one will use due to rate limiting.
+enterprise level use: ECR, ACR and quay.io (redhat maintaineg the container registry ) or ghcr.io (git hub container registry ) in my project we are using teh ghcr.io using .
+
+-docker hub create private and docker log>tag the image>docker push to docker hub.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+overlay2 shall i remove?
 

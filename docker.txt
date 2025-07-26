@@ -6,11 +6,15 @@ what were runninh the process inside CMD or ENTRYPOINT that is short life proces
 CMD ["nginx -g deamon off;"]
 
 sometimes docker container will go dwn for "js heap out memory so we need to delet "echo -3 /proc/mem page demt, inode dents and both> inial and maxixmun heao size/
+single process- if process complets/crash container exit.
+OOM ,configuration(passwd expired)
 
-~~~~~~~~~~~~~~~~~~~~~~``
+~~~~~~~~~~~~~~~~~~~expose~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
 expose instruction/keyword
 for socumention >evryoe get to know the from which port application listning.
 like metadata.
 expose taken by -p (keyword mapping hostport:containerport)
 
-  
+only documetion?
+no delaing with docker-compose :
+one service talking to db (backend to db ) - there expose 8080 with that port they can access.

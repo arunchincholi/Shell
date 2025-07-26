@@ -107,6 +107,7 @@ password expires?
 - any firewall issue check fireall- sudo ufw status ifactive chage to inactive
 - check SG for instance is it open 22 inbond traffic for instamce? 22 tcs ssh ? NACL is also check?
 - is there ssh process is stopped ? connect ec2 connect - sudo systemctl status sshd (if inactive ssh will not happen)
+
 putty - blank screen after entering the username/password
 instmace went down with 2/3 check due to memory 
 
@@ -116,6 +117,27 @@ we are not able to chage directory
 
 js heap out memory :
 - incrsing the intial and final heap size xms and xmx based on memory (ask horizentall scaling also)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~find list logs older tah 7 days in /var/log~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+find <directory>
+find . or /var/log type -f/d -name *.log  -mtime +7 - list files
+find intergrated with exec : exec command perform on the output of the filnd command like ls , rm 
+- find . -type f -name *./log -mtime +7 -exec ls -lrt{} \;
+-exec rm -rf, -exec mv {}, -exec gzip{} for zip file  - i want to grep the all old 7 days and zip the file . 
+
+find is very important files:
+msize +200M
+find . -type f -name *./log -mtime +7   
+o/p : except 7 file exec work on top of this output like list with username who is the owner group, permisttion thinsg, tiestamp.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~Log rotation~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SCRIPT
+logs writing the /var/logs/myapp/
+compress llogs older than 7 days:
+find /var/logs/myapp/ -type f -name *.log -exec gzip {} \; - compress the logs older than 7
+-msize +30 -exec rm -rf {} \;                             - remove older than  30 days 
+
+ 
 
 
 

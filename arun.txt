@@ -64,6 +64,14 @@ where? - git log (here based on time -merge  descinding.)
 git merge: combined twoo branches and create new merge commmit. - based on timestamp full history- crnological order.- not serial - based on timesamp
 git rebase : linier commit histry, move the branch commits on top of another branch . first main branch and next rebase branch (on rebase brancg rebase origin/main)
 
+------------------------------------------------------------------------------------------------
+git branch stratergy:
+TRUNK BASED STARTEGY:
+main
+feture
+release- tag - release 
+hotfix - push to main branch and notify developer to working on fetaure branch.
+
 
 
 

@@ -75,6 +75,10 @@ using ssh-keygen generate public and private key (place the public key in the au
 ~~~~~~~~~~~~~~~~/var filled 100%~~~~~~~~~~~~~~~~~~~~~~~~````
 all sevrice write logs inside var log
 - nginx, tomcat, httpd
+logs s3 movment 
+remove cache clear cachef from package manager end: apt clean (it will remove cache), remove old bkp. 
+find the command mtime +20 , msixe +200M , exec ls {}, exec rm {}
+remove the tmp folder.
 
 
 

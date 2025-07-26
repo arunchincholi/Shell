@@ -66,10 +66,10 @@ git rebase : linier commit histry, move the branch commits on top of another bra
 
 ------------------------------------------------------------------------------------------------
 git branch stratergy:
-TRUNK BASED STARTEGY:
-main
-feture
-release- tag - release 
+1. TRUNK BASED STARTEGY: we are using the trunck
+main  (active developemt)
+fetfeture (feture branch - release)
+release- tag - release (create tag and create release)
 hotfix - push to main branch and notify developer to working on fetaure branch.
 
 

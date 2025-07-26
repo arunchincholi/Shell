@@ -22,11 +22,18 @@ one service talking to db (backend to db ) - there expose 8080 with that port th
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~port not acccseebale affter port opening~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
 port mapping dine?
 2. recheck the docker run the commaond port, 
-3. if the port is open or any other application running (like jenkins8080, tomcat 8080 deefult)
+3. if the port is open or any other application running (like jenkins8080, tomcat 8080 deefult)  - netstat -tulnp > if use i chage the port - host:container 
 4. Anay firewall status "ufw status " so just disbale and access the applictaion
 5. in application added the like app.listne (80, 127.0.0.1) - application access with this port only need to set the *
                                       need to update (tell developer to write code like app.listner (80, 0.0.0.0)
          in timat we added for the contex.xml so that manger ui we will gte.
  curl localhost 80 so curl 8080 its fine 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~Data lost when container stops and restrat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+docker volume - ephemeral in nature- sort lived 
+stop and restrt dat inside docker will lost  so crete volume and attch that volume to container while running the container
+- docker run -v mydat:/apps/ <container name>
+
+--mount local:docker path
 
 

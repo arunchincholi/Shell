@@ -1,1 +1,32 @@
+~~~~~~~~~~~~~~~monitor and obervalibilty~~~~~~~~~~~~~~~~~``
+monitoring - tell you : when somthing is wrong with your system
+- in dashboad we can see what happen, like system ran out of cpu, memit will use the dashboard.
+- you can set alert also 
+observalibity:
+it will tell why sytem went down what is th ereson cpu is more (which process conuming teh more resouvrce)
+- what are the logs, traces, errro messgaes.
 
+~~~~~~~~~~~~~~how you emit the custom logs and metrics in application~~~~~~~~~~~~~~~~~~~~~~~```
+developer using the opebtelmeterty like counter is using in the application code .
+
+prometheous exporter, node exporter give cpu, mem mertixs 
+but custom logs ex: paymnet count 
+every prpomagramming language nbased oon lan they use teh logging framework (log4j for java) here developer define log format like error, info,debug like that.
+how: 
+ex: payment count.
+1. developwe use the prometheous client in there application .
+2. use the counterUuse te gauge counter metrics)  , so prometheius client import servers and count the application and show it in the dashboard. (counter is always incremental)
+3. application developer instruments the metrics by the opentelemetery (its open source)
+
+~~~~~~~~~~~~~~what kind of metrics worked with current project~~~~~~~~~~~~~~~~~~~~~~````
+infrastur realted metrics -node exporter- no related things(cpu, memory)
+2. kuberenets worker componets - liek kubelet and etcd
+3. application related metrisc
+4. vo services and docker relted kuberenets related , service now, linux releted like cpu, process 
+
+~~~~~~~~~~~~~~~~~~`have you worked in observability yes? explain~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
+ask devolper to instrument the custom metrixs
+paymnet metrics.
+explain the claim service.> ability to observer internal state of appliication (cpu, disk, memory)
+logs and traces 
+more request- payment serice is going down > implement the log4j framework > i set up prometheous and grafana > trcing user eager >developer instrument custom metrics by opentelmetery 

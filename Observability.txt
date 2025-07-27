@@ -89,5 +89,9 @@ qoute creation>underwting>scrunity?applications ubmttion>policy convertter
 Policy Issuance	Generate policy documents and notify customer	PDF generation error, email delivery failure
 5. Payment Processing	                           Process initial premium payments	                 Payment gateway timeout, declined payments
 
+jager is teh distrubutaion tracing tool :
+for request recived -trace id is generated (under span id: issue with services, db issue)- for every trace trcae id created it will forward to next microserices like it will move 
+- span id will create with that we can info about the trace like in which place request took more time.
+- we can find which place trace or in which microservices we willl get error .
 
 

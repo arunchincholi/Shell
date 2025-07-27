@@ -109,6 +109,25 @@ ok application server fine ,but issue with db leve(long running queries, db is d
 how: aplication check the suysout log, process check, load avarage, any hung thereds formed, take thred dump and kikk and restart the servers.
 db : kill long running query, modify the creation of indexing the so that it will featcg the data based on indexing need to do on table (craete index command)
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~what is the difference betwwen teh 0.0.0.0 and 127.0.0.1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+127.0.0.1 - loopback address allow to only machine to talk itself (one node cluster -cluserter ip serive in teh kuberenets ) not node ip or load balncer 
+all ipv4 address on local machine, application listen from the all ip from external.
+
+explain:
+i ghave one ec2 inside the one python application isthere ok, curl is working insid ethe ec2 but public ip:port i snot working menas i am not able to access the application becuase the aplication binded with the loop back address
+python3 -m http.server --bind 127.0.0.1:8080 if we set or biind like 0.0.0.0.0 8080 we can access from the external (like public ip:port ) 
+
+~~~~~~~~~~~~~~~~~~```public subnet and private subnet~~~~~~~~~~~~~~~~~~~~~~~~``
+publicaly accessbale , privatly accessbale 
+IG attch to public subnet 
+create nat gatawy in public subnet and attch taht NAT tp private so we can access vai bastin host (private ip we can access from bastin host)
+public subnet: all web server are there - route to interet through interbet gateway - frontend like webservers keeping 
+private subnet - not directly accesbale from internet via NAT gateway you can connect -
+
+
+~~~~~~~~~~~~~~~~~~~``you craeted private subnet insyed of public subnet ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+good thing- subnet created 
+route the traffic to IGW ( craete internet gateway and route to IGW)
 
 
 

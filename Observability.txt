@@ -45,4 +45,15 @@ yes payment service is going down due to high request
 - collabarate with developent team , set teh error(info/debug,debug) in log4j (logging framework for java) so that we can get all logs 
 - so that i check the logs and traces to get deep understand the floe like what happening inside service is there any bcakend services error like latency or bottleneck issue.
 
+~~~~~~~~~~~~~~~~~~~~~~`push based and pull based monitoirng~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+scrape metrics from /metrics 
+/node 
+
+target sends data to collector : push based 
+pull basded : prometheoues scare or pull metrics from traget (in node we mention nodeexporter- cpu,memoru, loki for logs, forv travve - )
+pull based in prometheous.yaml we mention the all target machine ips and port under scare_config fiel so that  it will pull)
+push based : ex: telgreaf 
+
+like ansibke is : push basd mechanisume 
+check and puppet : pull based mechanisume (agent should be running on each server)
 

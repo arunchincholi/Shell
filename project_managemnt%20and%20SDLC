@@ -33,3 +33,13 @@ testing- QA yest the code as per test cases (give signoff who ? stake hodler wil
 deployemnet - deplyment code to production serevrs (like jenkins, manually, via ansibe, via shwll script)
 monitoring - appd and grfana we are using the monitor the application and serevrs helth. 
 if ant alert will trigger >go to overview>based on priority >rise incidence in service now>and make it in the excel trcaker and follow up and close the sztTuz of incident.
+
+
+~~~~~~~~~~~~~~~~~~~~tell us about your devops expirence~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+based on job descrption olnly you can tell.
+i worked on ci/cd 
+our application deployed on aws 
+sre is not there - so obervaily and monitor application
+containeraztion application and build and montior te containers.
+i created the 
+troubleshoot teh production issue 

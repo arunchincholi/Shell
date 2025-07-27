@@ -71,8 +71,23 @@ network issue, latency issue (make edge service)
 - chec in the logs error not printing recheck with put debug and recheck
 - recheck with CPU and memory (any process taking more cpu, third party, tell to clouad team , third party team, chedk in appd also.
 - check with entire journt trace fro meage 9use sylog also ) we application and db logs alo s(is ther any db connection issue , connetion poll excausted, particular user of db has locked )- amy long running query -kill ad modufy teh indexing for table .
--
 
+~~~~~~~~~~```how you trace the request accross multiple microserices~~~~~~~~~~~~~~~~~~~~~~~~~~~~`````
+qoute creation>underwting>scrunity?applications ubmttion>policy convertter 
+-
+1. Quote Creation: The insurer provides a quote based on preliminary details such as the type of coverage, risk factors, and policyholder information.
+2. Underwriting: This critical phase involves detailed risk assessment where the insured's data is verified, risk factors evaluated (health, driving, credit, etc.), and premium prices are determined. The underwriter may approve or reject the application or request additional info.
+3. Scrutiny (Application Review): The submitted application is carefully reviewed and verified for completeness, accuracy, and eligibility according to company standards. This includes validating documents and confirming the coverage requested.
+4. Application Submission: The policyholder formally submits the completed application with all required documents.
+5. Policy Issuance / Conversion: Once approved, the application converts into an active insurance policy, policy documents are generated and sent to the policyholder, and payments are processed
+
+  Workflow Stage	                          Workflow Activity	                                Typical Trace Log Errors
+1. Quote Creation	                               Calculate premium estimate                      Calculation errors, missing input data
+2. Underwriting                                	 Risk evaluation and approval	                    Risk rejection, missing applicant data
+3. Scrutiny / Review	Document verification,     data validation	                                 Validation failure, missing docs
+4. Application Submission	                       Receive completed,                          signed application	Incomplete submission, format errors adcatthapidown
+Policy Issuance	Generate policy documents and notify customer	PDF generation error, email delivery failure
+5. Payment Processing	                           Process initial premium payments	                 Payment gateway timeout, declined payments
 
 
 

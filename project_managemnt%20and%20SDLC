@@ -45,7 +45,20 @@ i created the
 troubleshoot teh production issue 
 
 ~~~~~~~~~~~~~~~~what is your contribution~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
-primarly focus on the design - docker k8s, aws, ansible.
-documention 
+1. primarly focus on the design - docker k8s, aws, ansible.
+2.. documention craeting SOP 
 giving teh kt to junior (train te junior and bring them to speed.)
 connect with managenment and stacke holder 
+
+we have multipled evelopment team for docker i am point of contact 
+- one of teh docker related development team s
+
+~~~~~~~~~~~~~~~~~tell us about the project~~~~~~~~~~~~~~~~
+this is how i would answer the quation?
+- i am working as devops for insurance 
+- for this project we are adding teh microserveices.
+- i worken on terrfaorm, ansible, aws because our appliccation is deployed on AWS
+send mail>service requesr(sa) rised SLA is 48 hour>CR (change request created)- cab (central advisior board) meeting approved- make the changes the in aws level.
+- i worked as team lead - i take requirement from the developer and shared between the juniors and guide them educated them . 
+using the terfform we create the EKS
+

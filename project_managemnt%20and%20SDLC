@@ -62,3 +62,55 @@ send mail>service requesr(sa) rised SLA is 48 hour>CR (change request created)- 
 - i worked as team lead - i take requirement from the developer and shared between the juniors and guide them educated them . 
 using the terfform we create the EKS
 
+~~~~~~~~~~~~~~~~~~``how the flow~~~~~~~~~~~~~~~~~~~~~~~~~~
+When you drop an email or open a support case with AWS Cloud Support, the process typically flows as follows:
+
+Support Case (SR) Creation
+You raise a Service Request (SR) or support case describing your issue or request. This SR is logged in their system with a unique case number. You may select the severity or priority level (e.g., a 4 or 9 severity level usually corresponds to certain SLA response times such as 8 hours for medium severity).
+
+SLA and Routing
+The case is routed based on the severity level and the support plan you have. AWS support adheres to SLAs (e.g., response times vary based on severity: from 15 minutes for critical issues to up to 24 hours for low). The SLA clock starts ticking once the case is created.
+
+Change Request (CR) Raised
+If your issue requires a change in AWS resources, services, or configurations that cannot be done immediately or automatically, a Change Request (CR) may be raised internally or collaboratively as part of the resolution process. A CR represents a formal request to change infrastructure or service configuration.
+
+CAB Meeting
+A Change Advisory Board (CAB) meeting is a formal meeting where stakeholders review and approve or reject proposed change requests.
+
+The CAB usually includes representatives from support teams, service owners, security, compliance, and sometimes customer representatives if applicable.
+
+They discuss the impact, risk, timing, rollback plans, and necessary approvals for the change.
+
+If approved, the change is scheduled and implemented according to the plan. If rejected, the CR is sent back for revision or canceled.
+
+Approval and Implementation
+Once the CAB approves the CR, AWS support (or your internal team if applicable) proceeds with the implementation of the change to resolve the issue or fulfill the request. You remain updated via the SR/ticket until resolution.
+
+Difference between SR and CR:
+Term	Meaning	Purpose
+SR (Service Request)	A support ticket or case you raise to report an issue or request help	Tracks and manages your support interaction with AWS
+CR (Change Request)	A formal request to modify infrastructure, services, or configuration	Used internally or jointly to plan, review, and approve changes
+In essence, SR is the overall support case you raise (your ticket), while CR is a subset or follow-up related to specific changes that need governance controls (via CAB) before being applied to resolve the SR.
+
+You can think of it as:
+
+You raise an SR to report a problem.
+
+If fixing it requires a service/system change, a CR is raised.
+
+The CAB meeting ensures controlled, risk-assessed approval before proceeding.
+
+This flow and terminology are standard in ITIL-based support and change management processes used by AWS support and many organizations.
+
+References:
+
+AWS Support case handling, severity, and process flow details.
+
+Common ITIL definitions of SR (Service Request) and CR (Change Request).
+
+Related
+How does AWS support SLA timing relate to support case escalation process
+What is the typical workflow from support email to case resolution in AWS
+Who participates in CAB meetings and what decisions are made about support cases
+How are SRs and CRs different in urgency, scope, and approval process
+How do AWS support case timelines compare to the SLAs for SRs and CRs

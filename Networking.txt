@@ -73,14 +73,47 @@ When you request a website that uses Akamai, your request is often routed first 
 So, during your request, the DNS may direct you to an Akamai edge server first, which then retrieves content from the origin server if not cached, acting as an intermediary to improve speed and security.
 note:
 Akamai acts as a reverse proxy and CDN, not a forward proxy, and is used to accelerate content delivery, improve reliability, and enhance security by caching and filtering traffic between users and the webserver.
+soluation: purging required from cloudfair and akmai end earlier we are using the cloudfair later moved to akamai.
+
+post movembet: cache issue, rewrite logs printing more, space issue, 502 gateway- application slow down.
+
+~~~~~~~~~~~~~~~~~~~~~~~`user reports slowness isuue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+1. check all user or particular user, internet/wify,network issue, network latency
+2. i will check the network latency - by ping, traceroutr then will inform th akmai edge service (network latency is not issue)
+3. check load on any bandwidth like nload
+4. check access log, error log (max client reached), sysylog, backend upstram lof, database log (delay responce from db - long running query, modify indexes)
+5. netstat - chek the to many open connection later close the connection which one is not use 
+2. run the top , htop (check load avarage, process conuming cpu and memory  (more resource)
+         depriorties or kill the process
+    - in kuberenets 
+3, obeserve in te appd and grafna visulation 
+ 
+
+~~~~~~~~~~~~~~~~~~~~~curl work with ip failes with domain~~~~~~~~~~~~~~~~~~~~~~~~````
+curl usually sending the request and getting responce from server via GET, POST method 
+curl ip- ok
+curl https://onlineinsurnce.com - its not working
+1. only failes with one machine issue with the DNS resoulation issue.
+DNS configuration setting need to check - via ping -c 4 https://onlineinsurce.com, check the dns recored like A column for ipv4 addess, AAAA for ipv6, CNAME records for domain name to domain name mapping. 
+dns zones- we can find over there which ip assoatied ted with the which docmain.
+nslookup domain >will get alb>serch in the aws >we will get webservers >nginx menas over there proxy will get application server.
+2. dns translator via dns zones but missconfiguration, DNS server not able tnslate domain name to ip.
+dns entry: /etc/resolve.conf (entry - nameserver 8.8.8.8) nameserver is localhost you can set the 8.8.8.8 dns resolve issue will solve. once it resolve change it back to original.
+/etc/host : local dns system
+
+
+~~~~~~~~~~~~~~~~~~~~~~website return 502 code what is the issue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~````
+1.userbane and oassword : AD is down (LDAP) server is down - so that autheticatation not done so 50 bad gateway 
+ok AD is up reqyest sebd to wenb abd alb alb distrivute load to backend(application-business logib running over ther)- if backend is down , or it took more time 2. to responfd 502 will show.
+ok application server fine ,but issue with db leve(long running queries, db is down , connection not happeninf- db accpout is locked , db servers is not in good helkt its there in critical - so kll long running , ltaer do proper indexing.- db is down or taking more time to reond .
+how: aplication check the suysout log, process check, load avarage, any hung thereds formed, take thred dump and kikk and restart the servers.
+db : kill long running query, modify the creation of indexing the so that it will featcg the data based on indexing need to do on table (craete index command)
 
 
 
 
 
-~~~~~~~~
-
-
+how you are creating domain and where we are adding? for my project ?
 
 
 

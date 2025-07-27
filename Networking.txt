@@ -1,1 +1,48 @@
-~~~~~~~~~~~~~~~~~~```what i sthe DNS and why its importnat~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+~~~~~~~~~~~~~~~~~~```what is the DNS and why its importnat~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+domain name system
+its translate the domain name to ip and vice-versa 
+
+DNS (Domain Name System) serves as the internet's phonebook by translating user-friendly domain names into IP addresses, allowing easy access to websites and services. DNS is essential for usability, flexibility, performance, and scalability of internet communication.
+Setting up DNS can vary from changing DNS server settings on end-user devices (Windows, macOS, Android/iOS) to configuring DNS servers and records on domain hosting services or self-hosted DNS servers like BIND or Windows Server DNS roles. This setup enables proper domain resolution and internet service functionality.
+
+Common DNS configuration issues include DNS server unresponsiveness, resolution failures, incorrect DNS records, high latency, and DNS cache problems. Solutions typically involve checking network connectivity, restarting devices and routers, switching to reliable DNS servers, verifying and correcting DNS record settings (A, MX, SPF), flushing DNS cache, and ensuring domain registration is valid. 
+
+DNS records are instructions within DNS servers that map domain names to specific information, such as IP addresses. The A record is one of the most fundamental DNS record types. The "A" stands for "Address," and it maps a domain name directly to an IPv4 address (a numerical IP address like 192.168.0.1) of the server hosting the domain. This allows browsers and devices to find and load a website without needing to memorize the IP address. Multiple A records can exist for one domain to help with load balancing or redundancy. For example, an A record links "example.com" to an IP address so visitors can reach the website through that domain name.
+
+Common DNS record types include:
+
+A record: Maps domain to IPv4 address.
+AAAA record: Maps domain to IPv6 address.
+CNAME record: Maps a domain or subdomain to another domain name (alias).
+MX record: Specifies mail servers for the domain.
+ALB (Application Load Balancer): Not a DNS record itself, but many cloud providers use DNS records to point a domain to an ALB as part of cloud infrastructure.
+~~~~~~~~~~~~~~~~~~~~~~OSI module~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+there are 7 modules.
+
+ex: explain interview.
+
+osi module define journey of request from client to server.
+try to access coneect.hdfclife.cmo via http/https.ftp/ssh - laayer 7 (application layer)
+web browser encryption take placet request for https via ssl - layer 6 (encryption layer)
+session created for request may be cache , login, username and password - layer 5 (sessionlayer )
+so 7,6,,5- webserever 
+after TCP indrduce for request - my request converted into packet (message broken into packet) - trnsport layer 
+server ip adress (destination ip where request will reach it will add to pockets ) - thet is network layer layer 3 
+mac address added to pockets - data link layer (layer 2)
+request will reach travers via cable, air, router an reach destination servers - physical layer - layer 1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -57,3 +57,10 @@ push based : ex: telgreaf
 like ansibke is : push basd mechanisume 
 check and puppet : pull based mechanisume (agent should be running on each server)
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`which tools  used to build your observabity stack~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+for metrics:
+prometheous: 9001 - for pull based, as datasource -timeseries datsource using for scarping matrics
+grafana - for visulaztion data over here like dahboard (graph, columns, pie charts  - define  the alert (prometheous alert manager) for alert 
+logs - ELK stack (elastic ) for visulation we can use the kibana dashboard
+traces - we are using teh eager 
+opentelmetery - developer using teh opentelmetry for instrumnet metrics (example gauge counter to count te paymemnt )

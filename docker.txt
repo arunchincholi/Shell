@@ -1,3 +1,7 @@
+1. abhishek veeramall
+2. imran
+3. all things from books and laptops 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~contaier exoit immediatly after run docker ontainer:~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 what were runninh the process inside CMD or ENTRYPOINT that is short life process ex: echo "hello" once its complte docker will exit 
 - if the configuration changes : extermalizer container going dowm - dq1ini passwd expired? so we changed the password so its came up.

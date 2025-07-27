@@ -101,4 +101,11 @@ for request recived -trace id is generated (under span id: issue with services, 
 i will check the this error is comming reguralerl or random (will check historical in prometheous and appd). 
 if regularly comming - i will increase teh limit of memory in deploymnet.yaml (kubectl get deploymnet , describe deploymnet) increase and deploy teh code .
 
-
+~~~~~~~~~~~~~~~you got alert @2AM that recahed 85%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+ok once in while cpu hit or disk space recahed the 85% ok 
+so make 2 things:
+1. alert tuning : if the cpu reches the 85% continusly in 5 or 2min send an alert.
+isk reached the 85% in last 5 min send alert (ok, alert , crticle) above 90% remender1, reminder2, reminder3
+2. SLO based (service level object oriented thing)
+if we are getiing the 1% erroor we are gettiing in last 5 min send alert . ex: 10 million request ok but in last 5 mj 1 million failed request send aler where as 100 r 1000 request failed leaved it.
+85% disk utilztaion sustening 5 min. send alert > sudde spike in the application leave it.

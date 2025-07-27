@@ -20,7 +20,7 @@ ALB (Application Load Balancer): Not a DNS record itself, but many cloud provide
 there are 7 modules.
 
 ex: explain interview.
-
+by me::::
 osi module define journey of request from client to server.
 try to access coneect.hdfclife.cmo via http/https.ftp/ssh - laayer 7 (application layer)
 web browser encryption take placet request for https via ssl - layer 6 (encryption layer)
@@ -33,7 +33,52 @@ request will reach travers via cable, air, router an reach destination servers -
 
 layer7,6,5 - web server originate, encryption, session creted for request(cache, cokkie, usename and passowrd cred)
 pockets , added destination, mac address, destination server reached via cable, internet, router - to physical 
+--------------------
+Layer 7 – Application Layer:
+You initiate the request using a web browser (for example, by entering connect.hdfclife.com). At this layer, the browser handles protocols like HTTP, HTTPS, FTP, or SSH.
 
+Layer 6 – Presentation Layer (Encryption Layer):
+If you are using HTTPS, your browser handles the encryption of the data using SSL/TLS at this layer, ensuring your information is securely transmitted.
+
+Layer 5 – Session Layer:
+A session is created to manage your interaction with the web server. This session might handle details such as caching, logged-in status, username, and password management.
+
+Layers 7, 6, and 5 are primarily managed by your web browser and the web server.
+
+Layer 4 – Transport Layer:
+Your request is divided into smaller packets (segments), and a protocol like TCP (Transmission Control Protocol) or UDP is used to ensure reliable delivery between client and server.
+
+Layer 3 – Network Layer:
+The packets are assigned source and destination IP addresses, designating exactly where the request is coming from and where it needs to go—i.e., the server’s IP address.
+
+Layer 2 – Data Link Layer:
+Here, MAC addresses are added to the packets, enabling devices on the same local network (such as switches and routers) to accurately deliver them.
+
+Layer 1 – Physical Layer:
+Finally, the data travels as electrical signals, light, or radio waves across physical media—such as cables, wireless routers, or fiber optics—until it reaches the destination server.
+
+htpps>encrypts>sessioncrete>packets cretes>add destination ip>add mac addres>send dat to server via cale.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Forward proxy and reverse proxy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
+
+forward proxy servers - sits infront of browser 
+Employees in a corporate network using a proxy server to access the internet securely and anonymously
+- 
+
+reverse proxy server sits inforny of server not browser.
+ex: tcs block chatgpt, via nginx reverse proxy we are calling the upstraem bloack vai nginx from revrse proxy (becuase teh backend application is secure not directly access from the browser. request forest web>app>db and cloase.
+sits in front of one or more backend servers, intercepting incoming requests from clients on the internet, forwarding to backend servers, and returning responses.
+
+~~~~~~~~~~~which edge service yu are using ~~~~~~~~~~~~~~~~~~~~~~~~~~
+When you request a website that uses Akamai, your request is often routed first to Akamai's servers (edge servers) rather than directly to the webserver hosting the site. These Akamai edge servers cache content closer to you geographically and deliver it efficiently. This setup reduces latency, speeds up website load times, and reduces the load on the origin webserver by serving cached content.
+So, during your request, the DNS may direct you to an Akamai edge server first, which then retrieves content from the origin server if not cached, acting as an intermediary to improve speed and security.
+note:
+Akamai acts as a reverse proxy and CDN, not a forward proxy, and is used to accelerate content delivery, improve reliability, and enhance security by caching and filtering traffic between users and the webserver.
+
+
+
+
+
+~~~~~~~~
 
 
 

@@ -21,5 +21,28 @@ Trace: A distributed trace follows a single payment request from the API gateway
 
 Log: Detailed log entries record the error messages when a payment transaction fails, such as timeout errors from the payment gateway or invalid card details logged during that specific payment attempt. (Shows why the payment failed.)
 
+~~~~~~~~~~~~~~~~~~~~~~waht kind of metrics we used in the rela tie~~~~~~~~~~~~~~~~~~~~````
+infrasture related liek cpu, memory and other
+2. kuberenet worker componets, kublele
+docker and kuberenets 
+microseices like - claiim serives and payment service
+kafa related like kafka count insted of Queues (producer and consumer ) 
+
+
+~~~~~~~~~~~~~monitoring and observability~~~~~~~~~~~``````
+monitor: what happened to sysyem (red/ yello things in the dashboard how promoquery running beyond that)
+like what issue server ran out of cpu, memory 
+
+bservability: we can check ober here like how we can check the issue, why the cpu is crossed or disk space reached 85%
+
+~~~~~~~~~~~~~``````how you custom logs and netrics applictaion~~~~~~~~~~~~~~~~```````
+by default some of teh logs will not come by default like : we can get the id or json for CPU, memory and diskspace/
+ex: i wan to count of payment docne, paynet failure from paymnet service in ine day 
+- so need to collabarate with developmnet team , developer add teh cgauge counter metrics in there application so its can scare the payment count based one request and send to dashboard.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~have you worked with observability ~~~~~~~~~~~~~~~~~~~~~``
+yes payment service is going down due to high request 
+- collabarate with developent team , set teh error(info/debug,debug) in log4j (logging framework for java) so that we can get all logs 
+- so that i check the logs and traces to get deep understand the floe like what happening inside service is there any bcakend services error like latency or bottleneck issue.
 
 

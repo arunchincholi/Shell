@@ -94,4 +94,11 @@ for request recived -trace id is generated (under span id: issue with services, 
 - span id will create with that we can info about the trace like in which place request took more time.
 - we can find which place trace or in which microservices we willl get error .
 
+~~~~~~~~~~~~~~~~~~~~~~~~pod craeshed duw to OOM killed~~~~~~~~~~~~~~~~~~~~~~
+1. i will ceck and confirm OOM killed "kubectl get pods" - crashloopback so OOM error
+2. i will check the logs of teh pod and send the logs to developer (thred dump and heap dump threds)
+3. i will check the logs at that time of crash , in lower enviornment i will make the issue one more time to QA team send more request (load testing)
+i will check the this error is comming reguralerl or random (will check historical in prometheous and appd). 
+if regularly comming - i will increase teh limit of memory in deploymnet.yaml (kubectl get deploymnet , describe deploymnet) increase and deploy teh code .
+
 

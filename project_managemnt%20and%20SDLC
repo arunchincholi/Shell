@@ -1,1 +1,24 @@
+~~~~~~~~~~~~~~~~~~~~~~~Example of How to Explain Your Daily DevOps Routine~~~~~~~~~~~~~~~~~~~~`````
 
+daiy stadup meeting (agile): what we did , what we are doing>head to jira priotories the task and tale the task , make it on work>deploymnet overvview call>finaly EOD update the work os task status of tin teh jirs .
+in product backlog all come and store >manager/team lead assign to devops engineer 
+Morning Stand-up (Agile Ceremony):
+“Each morning, I participate in our Agile daily stand-up meetings, where we quickly align on project status, discuss blockers, and synchronize priorities with the team.”
+
+Task Tracking in Jira: head to jira will see 
+“I regularly update my progress in Jira, where all our tasks, stories, and bugs are tracked. After the stand-up, I check my Jira board, review the day’s priorities, and pick up tickets assigned to me. I make sure to move tickets to the correct status as I make progress.”
+
+Infrastructure Work with Terraform:
+“My technical tasks often include writing or updating Terraform code to provision and manage infrastructure as code. I ensure my changes are versioned in Git, reviewed through pull requests, and tested before merging.”
+
+Afternoon Check-ins or Meetings: deployment day (deploymnet overview call) - will connect with all leads , developer and manger over there we line items , copmonets overvew callall.
+“In the afternoon, we might have additional team meetings for sprint planning or retrospectives, or I join discussions to troubleshoot incidents or collaborate on complex deployments.”
+Continuous Jira Updates:
+
+EOD:
+“I keep Jira updated throughout the day—commenting on tickets, moving them to ‘In Progress’, ‘Ready for Review’, or ‘Done’ as needed, so the team always has an accurate status.”
+
+task like : docker setup, master and slace setup, job ceation, was fix pack, ansible script for connect all server ans stopand start servers.
+year end activities, craete sanity board for ye activity, 
+
+“My daily workflow starts with an Agile stand-up to set priorities. I use Jira to track all tasks and collaborate with the team, update infrastructure using Terraform, and participate in regular meetings to ensure alignment. I keep our Jira tracker up to date, providing visibility and ensuring smooth progress.”

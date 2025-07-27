@@ -64,3 +64,15 @@ grafana - for visulaztion data over here like dahboard (graph, columns, pie char
 logs - ELK stack (elastic ) for visulation we can use the kibana dashboard
 traces - we are using teh eager 
 opentelmetery - developer using teh opentelmetry for instrumnet metrics (example gauge counter to count te paymemnt )
+
+~~~~~~~~~~~``user facoing te slowness~~~~~~~~~~~~~~~~``
+confir wehere only one user or ho many users, is there paticular region user facing or all user facin like any internet issue,
+network issue, latency issue (make edge service)
+- chec in the logs error not printing recheck with put debug and recheck
+- recheck with CPU and memory (any process taking more cpu, third party, tell to clouad team , third party team, chedk in appd also.
+- check with entire journt trace fro meage 9use sylog also ) we application and db logs alo s(is ther any db connection issue , connetion poll excausted, particular user of db has locked )- amy long running query -kill ad modufy teh indexing for table .
+-
+
+
+
+

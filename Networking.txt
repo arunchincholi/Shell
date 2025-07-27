@@ -31,6 +31,12 @@ server ip adress (destination ip where request will reach it will add to pockets
 mac address added to pockets - data link layer (layer 2)
 request will reach travers via cable, air, router an reach destination servers - physical layer - layer 1 
 
+layer7,6,5 - web server originate, encryption, session creted for request(cache, cokkie, usename and passowrd cred)
+pockets , added destination, mac address, destination server reached via cable, internet, router - to physical 
+
+
+
+
 
 
 

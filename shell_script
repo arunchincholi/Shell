@@ -52,6 +52,11 @@ sevices like - nginx, docker, sshd ) need to check?
 website doens load how will you investigate?
 1. port is laredy opened? service is listinh that port ?
 2. checl webservooer (service running or not systemctl status nginx)
-3. check static co tent like /var/www/html (inder index.hy=tml fiel check
+3. check static co tent like /var/www/html (inder index.hy=tml fiel check  (html is in the correct postion or not)
 3, check error.log (access logs also - var/log/error)
 
+############################################################################
+sed (stream edtor)
+sed '%s/oldstring/newstring/g' arun.txt
+sed '1d;5d' arun.txt    (line no 1 and line 5 will delete     i dont the last line (1d:$),  
+- sed 1d;5d : print one terminal then later use -i so it will remove >cat arun.txt (1st and last line removed)    sed -i '1d;$d' arun.txt  (not print on terminal it will update file directly.

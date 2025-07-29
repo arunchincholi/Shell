@@ -29,5 +29,11 @@ find "$log_dir" -type f -name *.gz -mtime +30 -exec rm -f {} \;
 bulk craetion linux user:
 
 as per CSV file shell script crate user and password.
+ans:
+let me tell approch first i will write script later
+1. cgeck csv file exists or not
+2. first line igonre username and password (metdata of csv) igonre 1st line no and use the loop from line no 2 and last (if i kbow 10 llines i will use for loop)
+3. use useradd command (passwd not will come because this is interactive session ) - so use the "chpasswd <username:password>"  - it will setup password.
+
 
 

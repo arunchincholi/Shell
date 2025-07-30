@@ -1,0 +1,7 @@
+1. master and salve setup
+2. craeted users and roes for developers
+3, craeted some jar jobs like myaccount and pcsps 
+4. some issue (svn password expire, post movemebt server password expires, compliation error, restart the jenkins via (ui and CLI)
+5. craete one disk space job and alerrt will send to email notification 
+6.caete war deploymnet via ANT, mvn 
+7. jenkins private ip - we are mentioning in jenkins , jenkins public ip movingg to destination authorization 

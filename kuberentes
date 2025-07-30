@@ -303,3 +303,12 @@ node port - kuberente access via useing the node port and port
 load balnacer - enable public access to externally, anyone can acces, this type only works on kuberente cluster (not minikube, kind)
 external name - when we define external name , external access through DNS name.
 headless service - cluster ip to none headless service will create , it will use in statefullset(like database)
+
+##################label and selector###########################3
+label is a key and value pair, we need to add under metadata of deploymnet/pod object 
+selectore - to identfy the pod using te label - use the service and replicaset object 
+#################################service##########################33
+cliustr -a cces inside cluster
+nodeport- whoever access within vpc , via node ipand port, headache to remenber the ip, no HA, no defualt autoscaling, SSLand TLS configuration default
+loadbalncer- outside userd like our online inurnace   (only have achive in luberenet cluster which have cloud control manager enabled or controller manager running on the controla node .
+

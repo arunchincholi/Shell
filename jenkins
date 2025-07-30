@@ -4,4 +4,26 @@
 4. some issue (svn password expire, post movemebt server password expires, compliation error, restart the jenkins via (ui and CLI)
 5. craete one disk space job and alerrt will send to email notification 
 6.caete war deploymnet via ANT, mvn 
-7. jenkins private ip - we are mentioning in jenkins , jenkins public ip movingg to destination authorization 
+7. jenkins private ip - we are mentioning in jenkins , jenkins public ip movingg to destination authorization
+8. check all steps manually how to build manualllay  
+
+
+ ###########################what i sthe jenkins shared libarray and how they work ######################################
+we have multiple developemnet teams 
+- all teams required pipeline. some of the  satage is remains same liek build , deploying  steps, so we are using the  jenkins shared library for that.
+- craete githiub>placed the jenkins shared library - if new requirement we will check that jenkins shared library we can use that(invoke shared library) else create pipeline in tjhe jenkinsfile from scratch
+- by using this time will save
+
+#####################top 5 build target taht you use with maven frequently#############################################333
+maven - build language 
+gradle, ANT
+- 
+MAVEN----------5 commads 
+1. mvn clean - it will clean the /target folder (previous build like jar, war, artifactory)
+2. mvn compile - developer wriet java code>compile teh sorce code (src/main/java)
+3. mvn test - test the sorce code - src/test/java
+4. mvn package - pacahe the code (it will craete the jar or war file )
+5. mvn install - install or place the build artifactory (like target folder and jar )into one extertranl repository or move the respective remote server. (artifactiry repository )
+              - by default the all things stored in the ~/.m2 folder thsi is the default folder alll crated target and artifactory stored in m32 folder only. 
+
+###############which artifactory repositiry do you use for builds################################################3

@@ -27,3 +27,27 @@ MAVEN----------5 commads
               - by default the all things stored in the ~/.m2 folder thsi is the default folder alll crated target and artifactory stored in m32 folder only. 
 
 ###############which artifactory repositiry do you use for builds################################################3
+in my earler project i am using teh nexus as artifact repository,>we are created the jar,war,ear >we are keeping alll those in teh nexus repo>that we mention in the pom.xml (credntial and which palec store)
+>developer go that theat plavce and download as per theier requiremnet.
+1. how the teh artifactory repo configuration in pom.xml ?
+2, why nexus yo use why not jfrog?
+3. how tos etup teh nexus repo and how the place in mvn file. and how developer cn aaccess teh artifactr repo.
+
+#######################how you cofnigure artifactory for maven application##############################333
+in maven one setting.xml is there> you can craete repo profile within that configure repository and repository location.
+- if you are using the multiple repo (url/repositoty path) or specific job you need to mention the repository path different then - insde po.xml <under distruvutaionmanagemnet add the repo id an durl>
+
+################################build passed localy not in CI###########################################
+all steps:
+1. what exctly like build language depend
+approach :
+~ logs - i wi;; check teh first build log >if any error ok >else i will cgo forward
+~ Dependency cache - in local without mvn cleans it mighht work but in jenkins its cache issue >i will add mvn clean sthen mvn install
+~ env - in local enviornmnetal variable are there but via jenkins we are buildiing s jennkins agent didint read that variable so that i sissue 
+    Q! - gie me ne exmaple
+~ file permisstion - jenkinsagent has no file permisstion for executing so that is also issue i will check and gibe the permisstion and trigger the job
+Q1 - tell me one example
+~ compre with some OS, linux distrubution- from local server ip and jenkins server ip 
+Q1- gibe me one exmaple what you faced 1 issue and how you fixed.
+
+#################################CI pipeline Successed but application broken in prod#########################################333

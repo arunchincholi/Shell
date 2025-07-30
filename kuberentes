@@ -294,3 +294,12 @@ no - pod are emphermaerla in nature , it migh change the ip everytime when the r
 deploymnet L labels (under template-template hashcode , service.yaml - selector name should be same )
 so when it comeback comminucation over label and selector not via ip.
 pod 1 frontend and podb is backend .
+
+
+######################what are types of kuberenets #######################################################3
+type of services - based on scope how the servicice is accessble (scope of access)
+cluster ip - only withing k8s cliuster -  
+node port - kuberente access via useing the node port and port 
+load balnacer - enable public access to externally, anyone can acces, this type only works on kuberente cluster (not minikube, kind)
+external name - when we define external name , external access through DNS name.
+headless service - cluster ip to none headless service will create , it will use in statefullset(like database)

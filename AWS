@@ -8,4 +8,6 @@ aws:
 5. we asked the scaling of ec2 instamce (verticle an dhorixwntal)
 6. rds upgradtion 
 7.how the AWS flow will hapen once drop mai (sr createrd 48 hours SLA, CR craeted >CAB meeting>approved>implement then roolback
+8. iam craetion of users and adding teh permisstion read only authetication with mfa
+9. monitring metrics voa cloudwatch 
 

@@ -6,6 +6,7 @@
 6.caete war deploymnet via ANT, mvn 
 7. jenkins private ip - we are mentioning in jenkins , jenkins public ip movingg to destination authorization
 8. check all steps manually how to build manualllay  
+9. checkout svn we are passing the ba id and password is there any way to do password less authetiaction
 
 
  ###########################what i sthe jenkins shared libarray and how they work ######################################

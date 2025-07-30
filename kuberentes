@@ -288,3 +288,9 @@ spec:
 ---
 
 If you want, I can give a sample `deployment.yaml` and `service.yaml` for all 3 service types side-by-side with comments for each. Let me know.
+
+############################developer mention the pod ip in teh pod b property via hardcode pod ip is mentioned is te goood practc#######################################################3
+no - pod are emphermaerla in nature , it migh change the ip everytime when the restart/crashllopback/wendown and coomeback >so 502 badgateway will come >again specify ip >else use service via labels and selector algorthic communication will happe.
+deploymnet L labels (under template-template hashcode , service.yaml - selector name should be same )
+so when it comeback comminucation over label and selector not via ip.
+pod 1 frontend and podb is backend .

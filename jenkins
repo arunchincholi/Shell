@@ -51,4 +51,12 @@ Q1 - tell me one example
 ~ compre with some OS, linux distrubution- from local server ip and jenkins server ip 
 Q1- gibe me one exmaple what you faced 1 issue and how you fixed.
 
-#################################CI pipeline Successed but application broken in prod#########################################333
+#################################CI pipeline Successed but application broken in prod#########################################
+1. issue with traffic,
+2.deployment strategy (canery deploymnet 10 % users access the new version of custmers(internal ) -will keep the 2 days gradutually increased to 50%,eventually  100%
+3. something can be taken care by the build steps i cahcek stage and prod (compare different build flags)
+1. base
+d on the traffic (application broken>check logs>describe pod>crashloopback why?- because of failur fuction, OOMM killed- due to traffic
+i request tester to perform the load testing on QA enviormnen.
+2. compare teh stage and prpod (instance typr, 5 node cluster, where as stage 3 node cluster)
+

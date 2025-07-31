@@ -60,3 +60,15 @@ d on the traffic (application broken>check logs>describe pod>crashloopback why?-
 i request tester to perform the load testing on QA enviormnen.
 2. compare teh stage and prpod (instance typr, 5 node cluster, where as stage 3 node cluster)
 
+##############################pipeline slow down over a time(buuild takes more time)#########################################################
+pipline job taking more time to execute.
+approach:
+1. parrallsim:only one agent or 4 ci cd pilinne run (concurrency )
+2. build cache: for evey build sam emenas 10 build 11 build - you can take the cache layer from the old build so that we can reduce time.
+memory issue- verticle scaling-increse swap
+
+########################devloper pushes feature branch but pipeline doent trigger###############################3333
+1. what- i will check CI file 
+githubaction yaml file- withing githubfuuction yaml file (in on filed what brach is tere under push if amin chage it to feture branch name , if pull not there confifure )
+- on:push:branched:- * : * feture (exclude the branch like *deturebranch )
+

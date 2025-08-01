@@ -46,6 +46,8 @@ dmesg -T | grep -i kill	Any process killed	Killed process 4567 (node)
 `dmesg -T | grep -Ei 'nfs	blk	xfs
 dmesg -T | grep -i panic	Kernel panic logs	Kernel panic - not syncing
 dmesg -T | tail -30	Last 30 kernel messages	Useful after crash
+docker events → live Docker system event logs
+
 --------------------------------------------------
 1.no space left on device
 - df -h, docker system df, container rpune/network prune, volume prune .
@@ -53,8 +55,40 @@ docker system df --verbose for detailed space usage per image, container, and vo
 Set appropriate resource limits when starting containers (--memory, --cpu).
 $ docker run --memory="512m" --cpus="1.5" --name mycontainer myimage
 
+o/p:
+docker container prune         # Remove stopped containers  
+docker image prune -a          # Remove unused images  
+docker volume prune            # Remove unused volumes  
+docker system prune -a --volumes  # Remove everything (use with caution)
+----
+docker system df               # Docker-specific usage  
+df -h                          # Overall system disk space
+------
+Use .dockerignore to exclude unnecessary files
+Combine RUN commands to reduce layers
+Use multi-stage builds to keep final image lean
+---
+
 2.js heap memory out 
 - Tune Node.js memory with --max-old-space-size
+dmesg -T | grep -i oom                (Container exits with code 137)
+docker logs : js heap out memory add the max-old-space 
+set resouvce lmiit:
+deploy:
+  resources:
+    limits:
+      memory: 512M
+
+o/p : Set alerts>implement autoscale>  Profile and tune application code to avoid memory leaks: crete swap >Use .dockerignore files to exclude unnecessary files during image builds to keep images lean
+Scan container images for vulnerabilities by trivy.
+
+---------
+Check container logs for errors and warnings about memory, CPU, or disk usage.
+Monitor live resource usage (docker stats) and correlate with log timestamps.
+Review host and Docker daemon logs for system-level OOM or resource constraint events.
+Utilize monitoring platforms (AppDynamics, Grafana, CloudWatch) for comprehensive tracing and metrics aggregation.
+Confirm root cause by matching spikes or failures in logs with resource exhaustion indicators.
+
 3. 500 error resolver error 
 4. CORS error
 ccces-control alow orgin* > configuration file>./apachectl -s stop and start.
@@ -80,6 +114,10 @@ post read access to user:deploymnet group - its inclusing with this.
 
 11. docker --version what ?
 
+
+dcoker lifecycle error:
+OCI runtime - create failed	Bad permissions or invalid entrypoint  (cmd is executed so it comes out , ecternaliser password expires 
+container exited immediately	Wrong CMD or ENTRYPOINT
 -------------------------------------
 docker timeing:
 dicker run -e TZ="Asia/kolkatta" or add in the dockerfile (like ENV TZ=Asia/Kolkatta b

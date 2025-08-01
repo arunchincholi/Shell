@@ -140,5 +140,18 @@ trivy image nginx:1.23
 trivy image --severity HIGH,CRITICAL nginx:1.23
 - Trivy scanning is used to find known security vulnerabilities (CVEs) in Docker images, filesystems, or configuration files by analyzing packages and dependencies against public vulnerability databases.
   
-  
+  ----------------------------
+dcker volumes:
+| Volume Type | Command Example                             | Where Stored                          | Advantages                                                       | Real-Time Usage in Prod                                   | Common Interview Points                                               |
+|-------------|----------------------------------------------|----------------------------------------|------------------------------------------------------------------|------------------------------------------------------------|------------------------------------------------------------------------|
+| Named       | -v myvolume:/data <br> docker volume create myvolume | /var/lib/docker/volumes/               | Persistent, portable, safe for multi-host use                   | Databases, shared logs/configs                             | Backup, inspect, restore, default choice in prod                      |
+| Bind Mount  | -v /host/path:/container/path               | Exact host path on host                | Real-time sync, host control, great for configs/logs            | Certs, logs, configs injection                             | When to use, file permission issues, host dependency risks            |
+| tmpfs       | --tmpfs /tmp                                | RAM only                               | Fastest, avoids disk writes, ideal for secrets/temp storage     | Cache, API tokens, temp build artifacts                    | Secure for secrets, no disk IO, when to avoid                         |
+
+| **Volume Type** | **Command Example**                                    | **Where Stored**                            | **Advantages**                                                          | **Real-Time Usage in Prod**                                             | **Common Interview Points**                                                    |
+| --------------- | ------------------------------------------------------ | ------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Named**       | `-v myvolume:/data`<br>`docker volume create myvolume` | `/var/lib/docker/volumes/` (Docker managed) | - Persistent, easy to manage<br>- Portable<br>- Safe for multi-host use | - Databases (MySQL, MongoDB)<br>- Shared logs/configs across containers | - Best choice in prod<br>- How to back up<br>- Inspect & restore volumes       |
+| **Bind Mount**  | `-v /host/path:/container/path`                        | Exact host path                             | - Full control<br>- Real-time sync with host<br>- Great for config/logs | - Log file storage<br>- External certs/configs injection                | - When to prefer bind<br>- Risks (host dependency)<br>- File permission issues |
+| **tmpfs**       | `--tmpfs /tmp`                                         | RAM only (not disk)                         | - Fastest<br>- No disk writes<br>- Secure for temp/secrets              | - API tokens<br>- Cache<br>- Temp build artifacts                       | - How tmpfs avoids disk IO<br>- Use for secrets<br>- When not to use tmpfs     |
+
   

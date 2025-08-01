@@ -72,3 +72,4 @@ memory issue- verticle scaling-increse swap
 githubaction yaml file- withing githubfuuction yaml file (in on filed what brach is tere under push if amin chage it to feture branch name , if pull not there confifure )
 - on:push:branched:- * : * feture (exclude the branch like *deturebranch )
 
+

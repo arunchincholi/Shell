@@ -35,6 +35,7 @@ e.g., memory issues, device disconnects, file system errors, OOM kills, Docker c
 
 
 -------------------------------------------------------------------------
+dmesg >any kill process, oom memory issue with process killed
   View Kernel/System Logs (dmesg)
 Command	Purpose	Sample Output
 dmesg	Kernel logs (raw uptime)	[ 245.1234] eth0: link up
@@ -44,6 +45,13 @@ dmesg -T | grep -i kill	Any process killed	Killed process 4567 (node)
 `dmesg -T | grep -Ei 'nfs	blk	xfs
 dmesg -T | grep -i panic	Kernel panic logs	Kernel panic - not syncing
 dmesg -T | tail -30	Last 30 kernel messages	Useful after crash
+--------------------------------------------------
+no space left on device
+js heap memory out 
+500 error resolver error 
+-------------------------------------
+docker timeing:
+dicker run -e TZ="Asia/kolkatta" or add in the dockerfile (like ENV TZ=Asia/Kolkatta b
 
     
 

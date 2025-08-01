@@ -1,4 +1,5 @@
 docker install:
+how to remove this overalay2 , co
 ------------------------
 journalctl -u docker.service --since "30 minutes ago"/ today   --no-pager | grep -i error   (full o/p will show)
 $journalctl -fu docker.service - view live docker logs 
@@ -46,12 +47,50 @@ dmesg -T | grep -i kill	Any process killed	Killed process 4567 (node)
 dmesg -T | grep -i panic	Kernel panic logs	Kernel panic - not syncing
 dmesg -T | tail -30	Last 30 kernel messages	Useful after crash
 --------------------------------------------------
-no space left on device
-js heap memory out 
-500 error resolver error 
+1.no space left on device
+- df -h, docker system df, container rpune/network prune, volume prune .
+docker system df --verbose for detailed space usage per image, container, and volume.
+Set appropriate resource limits when starting containers (--memory, --cpu).
+$ docker run --memory="512m" --cpus="1.5" --name mycontainer myimage
+
+2.js heap memory out 
+- Tune Node.js memory with --max-old-space-size
+3. 500 error resolver error 
+4. CORS error
+ccces-control alow orgin* > configuration file>./apachectl -s stop and start.
+5. manager giave docker system prune >docker save -o <name.tar> <fullimage withrepo
+  - scp tar user@ip:whereneedtoplace<tmp>
+ssh user@ip> then docker load -i tar
+
+6. connection reset by peer:
+images is deleted save and load we did .
+
+7. not added in the hdfczip file
+solu: synthetic key doent have deploymnet permisstion for folder (if any new deploymnet new folder creation )
+post read access to user:deploymnet group - its inclusing with this.
+
+8.msit no tennat so msit and prod tennat is same for testing keeting teh uat impex.json in the msit.
+
+9.externalizer conatiner is not starting (safter its going down)
+- username is disbaled , username loacked saked team to unlock, request queus depth incraesed cleared, password expires - DQserver.ini 
+
+10. caetion of docker run commands - invalid: Entitystoreendpoint, please input correct url 
+- proxy is blocking the some yrl 
+/etc/enviornmnet and pass the -e <ur> while docker run command 
+
+11. docker --version what ?
+
 -------------------------------------
 docker timeing:
 dicker run -e TZ="Asia/kolkatta" or add in the dockerfile (like ENV TZ=Asia/Kolkatta b
+
+------------------------------------
+
+tar -cvzf <archive-name>.tar.gz <directory-or-files>
+xzvf- for extract 
+tar -xzvf archive.tar.gz -C /apps/arun
+-------------------------------------------------------
+
 
     
 

@@ -1,0 +1,144 @@
+Docker
+├── 1. Docker Basics (Quick Recap)
+│   ├── Docker Architecture: CLI, Daemon, REST API
+│   ├── Docker Images vs Containers
+│   ├── Lifecycle: build → run → stop → remove
+│   ├── Important CLI: build, run, ps, stop, rm, rmi, exec, logs
+
+├── 2. Dockerfile (Interview + Troubleshooting)
+│   ├── Instructions: FROM, RUN, COPY, CMD, ENTRYPOINT, ENV, VOLUME
+│   ├── Multi-stage builds (optimize image size)
+│   ├── Common Issues:
+│   │   ├── Cache not invalidating
+│   │   ├── Incorrect CMD/ENTRYPOINT
+│   │   ├── Permissions and PATH issues
+
+├── 3. Docker Images
+│   ├── Image creation & tagging
+│   ├── Image layers, caching, squashing
+│   ├── Image size optimization
+│   ├── Vulnerability scanning (e.g., Trivy, Docker scan)
+│   ├── Common Issues:
+│   │   ├── Image bloat
+│   │   ├── Not updating from base image
+│   │   ├── Wrong tag/image pulled
+
+├── 4. Docker Containers (Heavy Troubleshooting)
+│   ├── Lifecycle states: created, running, exited, paused
+│   ├── Start/stop/restart behavior
+│   ├── Healthcheck & auto-restart policies
+│   ├── Common Issues:
+│   │   ├── Container exits immediately
+│   │   ├── Restart loops
+│   │   ├── High CPU/memory usage
+│   │   ├── Crash loop debugging (logs, inspect, strace)
+
+├── 5. Volumes & Storage (Interview + Real Issues)
+│   ├── Volume types: named, bind mount, tmpfs
+│   ├── Data persistence strategies
+│   ├── Docker volume inspect, prune, rm
+│   ├── Common Issues:
+│   │   ├── Data loss
+│   │   ├── Permission denied inside container
+│   │   ├── Read-only filesystem
+
+├── 6. Docker Networking (High-Weight in Interviews)
+│   ├── Bridge, Host, None, Overlay (for Swarm)
+│   ├── Port binding vs exposing
+│   ├── DNS in Docker
+│   ├── Inter-container communication
+│   ├── Troubleshooting:
+│   │   ├── Container can't connect outside
+│   │   ├── Port conflicts
+│   │   ├── IP tables/NAT issues
+│   │   ├── DNS resolution inside container
+
+├── 7. Logs & Debugging
+│   ├── docker logs, docker inspect
+│   ├── journalctl (for daemon), dmesg (kernel-level), syslog
+│   ├── Exec inside container: `docker exec -it`
+│   ├── Debugging with Alpine/Bash + curl/ping/tcpdump
+
+├── 8. Security (Important for Senior Interviews)
+│   ├── Dockerfile hardening (USER, no root)
+│   ├── Secrets management (avoid ENV with secrets)
+│   ├── Image scanning tools (Trivy, Grype, Docker scan)
+│   ├── Capabilities dropping
+│   ├── seccomp, apparmor profiles
+│   ├── Docker socket security risks
+│   ├── Docker Content Trust (DCT)
+│   ├── Troubleshooting:
+│   │   ├── Permissions issues
+│   │   ├── Escalation vulnerabilities
+
+├── 9. Docker Compose (Essentials only)
+│   ├── Compose file structure
+│   ├── Networks and volumes in Compose
+│   ├── Override files and env handling
+│   ├── Logs and troubleshooting multi-container apps
+
+├── 10. Docker Integration with DevOps Tools
+│   ├── Jenkins (Docker-in-Docker, builds, cleanups)
+│   ├── GitLab CI/CD
+│   ├── AppDynamics/Prometheus/Grafana agent containers
+│   ├── ECR (Push/Pull), ECS/Fargate (overview)
+│   ├── Scanning in CI pipelines
+
+├── 11. Docker Daemon (Advanced Troubleshooting)
+│   ├── /var/lib/docker layout
+│   ├── docker info / events
+│   ├── Restart Docker safely
+│   ├── Config changes in `/etc/docker/daemon.json`
+│   ├── Checking journald/syslog for errors
+│   ├── Troubleshooting:
+│   │   ├── Daemon won't start
+│   │   ├── Resource starvation
+│   │   ├── Out of disk/inodes
+│   │   ├── Overlay2 corruption
+
+├── 12. Common Real-time Scenarios
+│   ├── High CPU/Memory inside a container
+│   ├── Disk space filling in /var/lib/docker
+│   ├── Container restart loops (healthcheck failures)
+│   ├── Network not reachable from inside
+│   ├── Docker logs not working (json-file full)
+│   ├── Can’t exec or get bash in lightweight containers
+
+└── 13. Bonus: Docker Alternatives and Future Topics
+    ├── Podman vs Docker
+    ├── Containerd and CRI-O
+    ├── Rootless Docker
+    ├── BuildKit advanced use
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
+
+| Component    | Role                           | When it Fails                    | Troubleshooting Tip             |
+| ------------ | ------------------------------ | -------------------------------- | ------------------------------- |
+| **CLI**      | Sends command                  | Command hangs or fails           | `docker info`, check socket     |
+| **REST API** | Middleman between CLI & Daemon | API tool fails, socket issues    | `curl /var/run/docker.sock`     |
+| **Daemon**   | Executes the actual work       | No containers start, Docker down | `systemctl status docker`, logs |
+
+------
+  Permissions issue in image	Check USER in Dockerfile
+------
+  | Problem                         | How to Check / Fix                                    |
+| ------------------------------- | ----------------------------------------------------- |
+| Image doesn't exist locally     | `docker images`, try `docker pull`                    |
+| Permissions issue in image      | Check `USER` in Dockerfile                            |
+| Misconfigured CMD or ENTRYPOINT | Use `docker inspect`, fix Dockerfile                  |
+| Volume mount errors             | Check volume paths: `docker volume ls`, `ls -l /path` |
+| ENV variables missing           | Confirm `docker run -e` or `Dockerfile ENV`           |
+
+-----------------------------
+  trivy scan:install based on OS 
+# Basic scan
+trivy image nginx:1.23
+
+# Scan with only HIGH and CRITICAL issues
+trivy image --severity HIGH,CRITICAL nginx:1.23
+- Trivy scanning is used to find known security vulnerabilities (CVEs) in Docker images, filesystems, or configuration files by analyzing packages and dependencies against public vulnerability databases.
+  
+  
+  

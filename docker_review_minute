@@ -164,3 +164,30 @@ dcker volumes:
 | **Macvlan**                | `docker network create -d macvlan ...`                              | - Assigns a **real IP** from the LAN to the container<br>- Bypasses Docker's bridge routing<br>- Acts like a physical device on the network | - Full L2 network access<br>- Can talk to LAN as a peer<br>- Better for legacy app communication       | - Legacy apps needing real IP<br>- Running DHCP/DNS/VoIP containers   | 🔸 Host can’t talk to container? Expected due to macvlan<br>🔸 Requires specific physical NIC<br>🔸 IP address management is manual                                                                                  |
 
   
+########################################################################################33
+security:
+| **Do This**                                                          | **Don’t Do This**                                           |
+| -------------------------------------------------------------------- | ----------------------------------------------------------- |
+| ✅ Use non-root user via `USER` in Dockerfile                         | ❌ Run as `root` in containers                               |
+| ✅ Use Docker secrets for passwords                                   | ❌ Set passwords in `ENV` variables                          |
+| ✅ Scan images using `Trivy` or `Grype`                               | ❌ Use outdated images without security scans                |
+| ✅ Drop unused Linux capabilities                                     | ❌ Grant all capabilities by default                         |
+| ✅ Enable seccomp/apparmor for system call control                    | ❌ Run containers without any syscall restriction            |
+| ✅ Protect Docker socket or use minimal-proxy containers              | ❌ Mount full Docker socket directly into containers         |
+| ✅ Pull signed images with DCT enabled                                | ❌ Pull unsigned or unverified images from untrusted sources |
+| ✅ Use minimal, hardened base images (Alpine, Distroless)             | ❌ Use bloated OS images like `ubuntu:latest` unnecessarily  |
+| ✅ Make container filesystem read-only if write access is not needed  | ❌ Let all containers have write access by default           |
+| ✅ Log and monitor container activity with tools like Falco or Sysdig | ❌ Ignore runtime events or container audit logs             |
+
+| **Security Area**        | **What It Helps With**               | **Do This (✅)**                                 | **Avoid This (❌)**                           | **Quick Fix / Troubleshooting**                    |
+| ------------------------ | ------------------------------------ | ----------------------------------------------- | -------------------------------------------- | -------------------------------------------------- |
+| **Dockerfile Hardening** | Prevent misuse of root privileges    | Use `USER`, `alpine` image                      | Don’t use `root` or bloated base images      | App crash? → Check permissions or ownership        |
+| **Secrets Handling**     | Hides sensitive data from images     | Use secrets file or Swarm secrets               | Don’t put secrets in `ENV`                   | Leaked secrets? → Run `docker inspect`             |
+| **Image Scanning**       | Detects known vulnerabilities (CVEs) | Use `trivy`, scan in CI/CD                      | Don’t push unscanned images to prod          | CVE found? → Update base image or patch            |
+| **Drop Capabilities**    | Lowers attack surface                | Use `--cap-drop=ALL`, add minimal needed caps   | Don’t run with all capabilities              | Broken feature? → Check missing caps in logs       |
+| **seccomp**              | Limits harmful syscalls              | Use default/custom profile                      | Don’t run without syscall restrictions       | Blocked syscall? → Check Docker or syslog          |
+| **AppArmor/SELinux**     | Enforces security policies           | Apply trusted profiles (e.g., `docker-default`) | Don’t disable MAC (Mandatory Access Control) | Permission denied? → Audit AppArmor/SELinux logs   |
+| **Docker Socket Access** | Prevents container root access       | Avoid mounting `docker.sock`                    | Don’t mount unless *really* needed           | Mounted socket? → Use `docker-proxy` or read-only  |
+| **Docker Content Trust** | Verifies image integrity             | Set `DOCKER_CONTENT_TRUST=1`                    | Don’t pull unsigned or untrusted images      | Pull failing? → Ensure image is signed with Notary |
+| **Read-Only Filesystem** | Prevents unwanted file writes        | Use `--read-only`, mount volume for logs/data   | Don’t let containers write to full FS        | App crash? → Mount writable volume                 |
+| **Audit Runtime**        | Detects unusual behavior             | Use `Falco`, `Sysdig`, or `Auditd`              | Don’t run without runtime monitoring         | Suspicious activity? → Check audit logs            |

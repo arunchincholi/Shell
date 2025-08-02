@@ -1,1 +1,23 @@
+which ansible version in the prod in hdfclife
+As of Aug 2025, latest is Ansible 2.14 or higher
+Originally by Michael DeHaan, now under Red Hat.
+- Module copied to /home/<user>/.ansible/tmp/ansible-<random>
+    Temporary files are deleted automatically after execution
+- /etc/puppet/puppet.conf → server = puppet-master.domain  - pull based 
+-v or -vvv full verbod=se executaion of playbook
+---------
+installtion:(tep-by-step for RHEL 8 / Amazon Linux 2 / Fedora
+sudo yum update -y 
+sudo yum install python3 -y
+pip3 install ansible
 
+# OR via package manager (EPEL repo for RHEL/CentOS)
+sudo amazon-linux-extras enable ansible2
+sudo yum install ansible -y
+ansible --version
+----------------
+Parallelism	Multiple connections open in parallel (default forks = 5)
+Each module has built-in idempotency (won’t install nginx twice)
+Output is converted to JSON and sent back to control node   (outis in JSON formt)
+Task status shown	✅ ok, ❗changed, ❌failed, 🔄skipped
+flow:::: Same flow repeats	Copy → Execute → Collect Output → Display → Delete

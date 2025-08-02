@@ -21,3 +21,52 @@ Each module has built-in idempotency (won’t install nginx twice)
 Output is converted to JSON and sent back to control node   (outis in JSON formt)
 Task status shown	✅ ok, ❗changed, ❌failed, 🔄skipped
 flow:::: Same flow repeats	Copy → Execute → Collect Output → Display → Delete
+------------------------
+Precedence Order (Which One Is Picked?) - inventry 
+Order	Inventory Source	Priority
+1️⃣	-i option in CLI	🔺 Highest
+2️⃣	inventory = ... in ansible.cfg	🔼 Medium
+3️⃣	Default /etc/ansible/hosts	🔽 Lowest
+
+inventory: INI format and yaml format 
+── inventory/
+│   ├── dev.ini
+│   ├── stage.ini
+│   └── prod.ini
+And inside ansible.cfg:
+
+[defaults]
+inventory = inventory/dev.
+ini
+
+---------------------------------------
+In this example, two plays are used — one for web and one for DB.
+is --- mandatory?	Yes, it indicates the beginning of the YAML document.
+- Ansible 2.10+ introduced collections, which group modules under namespaces. S
+     "ansible.builtin.user:" insted of onlu user  older version of ansible: user module you can use.
+--------------------
+modules:
+- name: Start and enable a service
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+----i am showing teh in th horizental:
+tasks:
+  - name: Create user               | ansible.builtin.user: name=appadmin shell=/bin/bash state=present
+  - name: Copy file                 | ansible.builtin.copy: src=/home/ansible/nginx.conf dest=/etc/nginx/nginx.conf mode=0644 owner=root
+  - name: Install package (yum)     | ansible.builtin.yum: name=httpd state=present
+  - name: Install package (apt)     | ansible.builtin.apt: name=nginx state=present update_cache=yes
+  - name: Start service             | ansible.builtin.service: name=nginx state=started enabled=yes
+  - name: Run shell command         | ansible.builtin.shell: cmd="df -h > /tmp/disk_usage.txt"
+  - name: Create directory          | ansible.builtin.file: path=/opt/myapp/logs state=directory owner=appadmin mode=0755
+  - name: Create file with content  | ansible.builtin.copy: dest=/etc/motd content="Welcome!" mode=0644
+  - name: Download file             | ansible.builtin.get_url: url=https://example.com/app.tar.gz dest=/tmp/app.tar.gz
+  - name: Extract archive           | ansible.builtin.unarchive: src=/tmp/app.tar.gz dest=/opt/myapp/ remote_src=yes
+  - name: Reboot server             | ansible.builtin.reboot: reboot_timeout=300
+
+
+
+"
+

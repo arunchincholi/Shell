@@ -9,6 +9,8 @@
 9. checkout svn we are passing the ba id and password is there any way to do password less authetiaction
 
 
+see teh some jobs like pipeline issue 
+
  ###########################what i sthe jenkins shared libarray and how they work ######################################
 we have multiple developemnet teams 
 - all teams required pipeline. some of the  satage is remains same liek build , deploying  steps, so we are using the  jenkins shared library for that.

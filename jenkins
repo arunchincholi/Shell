@@ -93,7 +93,18 @@ ps -ef | grep jenkins.war
 When configuring a slave/agent node in Jenkins, you specify the "Remote root directory"—the path on your remote agent where Jenkins will store job workspaces and data.
 remote directory>labels>usage(perment agent)>systemcredintain(masterip and private key)>lunch method via ssh (ssh-keygen -t rsa) the move jenkins publec to slave authorozation file.
 
+#####################################
+which is better bashrc is lowest priority?highest is tools section mentoned things and teh globla tool configuration
+| Source                | Priority | Who Sets It           | Used When                                       | Best For                                      |
+|-----------------------|----------|------------------------|--------------------------------------------------|------------------------------------------------|
+| .bashrc               | ❌ Lowest | System/User            | If no tools block used, Jenkins uses system env | Quick setup, not scalable, not Jenkins-managed |
+| Global Tool Config    | ✅ Medium | Jenkins Admin          | Source for the tools block                      | Centralized tool path control                 |
+| tools {} in Pipeline  | ✅✅ Highest | Jenkinsfile (DevOps) | Explicitly overrides all tool paths             | Best for portability and team pipelines       |
 
+---Jenkins Global Tool Configuration is global, not per-agent.
+
+You can't define tools directly per-agent in Jenkins, but:
+💡 You can create multiple named tool entries in Global Tool Configuration and install tools accordingly on agents.
  
 
 

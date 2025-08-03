@@ -79,7 +79,8 @@ declarative: post section and define failure configuration (fail,sub,descr,recip
 
 ---jekins change prt? how?
 
-jenkins installtion----------
+###########
+jenkins installtion
 jenkins need to add the https configuration how?
 3 ways: war, docker, linux os distrubution (based on os)
 wget https://get.jenkins.io/war-stable/2.426.1/jenkins.war   (Platform-Independent (.war File))
@@ -91,8 +92,14 @@ ps -ef | grep jenkins.war
 
 ####################Q!) master jenkins servr what is teh CPU and memory ?
 When configuring a slave/agent node in Jenkins, you specify the "Remote root directory"—the path on your remote agent where Jenkins will store job workspaces and data.
-remote directory>labels>usage(perment agent)>systemcredintain(masterip and private key)>lunch method via ssh (ssh-keygen -t rsa) the move jenkins publec to slave authorozation file.
-
+remote directory>no of executor is 4>labels>usage(perment agent)>systemcredintain(masterip and private key)>lunch method via ssh (ssh-keygen -t rsa) the move jenkins publec to slave authorozation file.
+availability-keepthisagent onlineas much as possible>in slave only java installtion and ant give.
+BUILD_XML : isthe importnt copy from one node to another 
+pluggins>under te jenkins home : copy from from old to new jenkisn
+system configuration:- home directory
+tools configuration:
+credntial and security configuration
+config.xml under jobs its very importnt 
 #####################################
 which is better bashrc is lowest priority?highest is tools section mentoned things and teh globla tool configuration
 | Source                | Priority | Who Sets It           | Used When                                       | Best For                                      |
@@ -105,6 +112,14 @@ which is better bashrc is lowest priority?highest is tools section mentoned thin
 
 You can't define tools directly per-agent in Jenkins, but:
 💡 You can create multiple named tool entries in Global Tool Configuration and install tools accordingly on agents.
+
+###########################manage users and roles
+role-based access control (RBAC) in Jenkins,
+pluggin: Role-based Authorization Strategy
+then : Manage Jenkins → Configure Global Security >authhorization>Role-Based Strategy
+
+Manage Roles – Define new roles and permissions
+Assign Roles – Assign roles to users
  
 
 

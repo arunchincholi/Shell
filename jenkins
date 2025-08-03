@@ -122,6 +122,15 @@ then : Manage Jenkins → Configure Global Security >authhorization>Role-Based S
 
 Manage Roles – Define new roles and permissions
 Assign Roles – Assign roles to users
+
+#################pipeline slow
+- static cide anlyses (line by line) - only chage file nly scan by using teh git diff 
+2. full static build (every night pipeline in night to ensure code in the main branch is teh stable)- full static code analysis 
+indenpendent worked in day tiem (nightly build triggered by teh devops(main branch fully updated and stable)
+
+###########static code anyalses
+we fond the - synatx error, credintainal anywere hardcode, unused vaiable and unused function, type missmatch 
+
  
 
 
